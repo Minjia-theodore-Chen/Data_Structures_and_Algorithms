@@ -10,7 +10,8 @@ def clear():
 def main():
     clear()
     student = {'name' : 'Minjia','age' : 25, 'course' : ['Math', 'CompSci']}
-    print(student['course'])
+    student['number'] = '1765229344'
+    print(student)
 
 if __name__ =='__main__':
     main()
