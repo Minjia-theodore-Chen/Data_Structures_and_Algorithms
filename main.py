@@ -14,7 +14,7 @@ def main():
     clear()
     student = {'name': 'Minjia', 'age': 25, 'course': ['Math', 'CompSci']}
     student.update({'name': 'Minjia CHEN', 'number': '17655229344'})
-    del student['course']
+    # del student['course']
     print(student)
 
 
