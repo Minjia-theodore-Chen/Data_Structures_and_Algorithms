@@ -1,5 +1,7 @@
 from os import system, name
 import math
+import time
+
 
 def clear():
     if name == 'nt':
@@ -7,11 +9,17 @@ def clear():
     else:
         _ = system('clear')
 
+
 def main():
     clear()
-    student = {'name' : 'Minjia','age' : 25, 'course' : ['Math', 'CompSci']}
-    student['number'] = '1765229344'
+    student = {'name': 'Minjia', 'age': 25, 'course': ['Math', 'CompSci']}
+    student.update({'name': 'Minjia CHEN', 'number': '17655229344'})
+    del student['course']
     print(student)
 
-if __name__ =='__main__':
+
+if __name__ == '__main__':
+    start = time.time()
     main()
+    end = time.time()
+    print(end-start)
