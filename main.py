@@ -1,5 +1,6 @@
 from os import system, name
-import math
+import pandapower as pp
+import pandapower.networks as nw
 import time
 
 
@@ -12,12 +13,8 @@ def clear():
 
 def main():
     clear()
-    student = {'name': 'Minjia', 'age': 25, 'course': ['Math', 'CompSci']}
-    student.update({'name': 'Minjia CHEN', 'number': '17655229344'})
-    del student['course']
-    #test if I can push this properly
-    #test on secondary machine
-    print(student)
+    net = nw.simple_four_bus_system()
+    print(net.bus)
 
 
 if __name__ == '__main__':
