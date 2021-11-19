@@ -16,6 +16,7 @@ def main():
     net = nw.simple_four_bus_system()
     print(net.bus)
     # ddd
+    # 0834
 
 
 if __name__ == '__main__':
