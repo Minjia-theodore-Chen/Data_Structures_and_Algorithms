@@ -1,6 +1,4 @@
 from os import system, name
-import pandapower as pp
-import pandapower.networks as nw
 import time
 
 
@@ -10,11 +8,14 @@ def clear():
     else:
         _ = system('clear')
 
+def make_new_temp_guess(Ploss: float, Tenv: float, Rth: float, *args, **kwargs):
+    return Tenv+Rth*Ploss
 
 def main():
     clear()
-    net = nw.simple_four_bus_system()
-    print(net.bus)
+    
+    Tnew: float = make_new_temp_guess(Tenv=30, Rth=0.1, Ploss=100, Pth=0)
+    print(Tnew)
     # ddd
     # 0834 0910
     # 大爷我来啦！！
