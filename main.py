@@ -1,6 +1,7 @@
 from enum import auto
 from os import system, name
 import time
+from tokenize import group
 import numpy as np
 
 
@@ -35,7 +36,10 @@ def grouper(input: list[int]) -> np.ndarray:
 def main():
     clear()
     lst = [0, 1, 2, 5, 8, 9, 10, 13, 14]
-    print(grouper(lst), type(grouper(lst)))
+    groups=grouper(lst)
+    print(groups, type(groups))
+    
+    print([lst[group[0]] for group in groups])
 
 
 if __name__ == '__main__':
