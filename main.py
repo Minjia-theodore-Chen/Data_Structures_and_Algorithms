@@ -33,13 +33,35 @@ def grouper(input: list[int]) -> np.ndarray:
     return np.array(groups)
 
 
+class Solution:
+    def getNum(self, base, l):
+        val = 0
+        for _ in range(l):
+            val = base * val + 1
+        return val
+
+    def smallestGoodBase(self, n: str) -> str:
+        n = int(n)
+        for l in range(len("{:b}".format(n)), 1, -1):
+            beg = 2
+            end = n - 1
+            while beg <= end:
+                mid = (beg + end) // 2
+                val = self.getNum(mid, l)
+                if val == n:
+                    return str(mid)
+                elif beg == end:
+                    break
+                elif val < n:
+                    beg = mid + 1
+                else:
+                    end = mid
+
+
 def main():
     clear()
-    lst = [0, 1, 2, 5, 8, 9, 10, 13, 14]
-    groups=grouper(lst)
-    print(groups, type(groups))
-    
-    print([lst[group[0]] for group in groups])
+    A = Solution()
+    print(A.smallestGoodBase("40"))
 
 
 if __name__ == '__main__':
